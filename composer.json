@@ -36,7 +36,7 @@
       "src/module-lookbook/registration.php"
     ],
     "psr-4": {
-      "Eloom\\Lookbook\\": "src/module-lookbook"
+      "Eloom\\Lookbookpro\\": "src/module-lookbook"
     }
   }
 }

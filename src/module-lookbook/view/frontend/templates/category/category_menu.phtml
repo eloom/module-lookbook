@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright © 2018 Eloom. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 ?>
 
@@ -7,13 +11,16 @@ $helper = $this->getHelper();
 $config = $this->getMenuConfig();
 $this->addData($config);
 $html = $this->getHtml();
-$widget = ['Eloom_Lookbook/js/category-menu' => []];
+$widget = ['Eloom_Lookbookpro/js/category-menu' => []];
 ?>
 <?php if ($html) : ?>
-<div class="block block-lookbook-category-menu" data-role="lookbook-category-menu">
-    <div class="block-title">
-        <strong role="heading"><?= __('Lookbook Categories') ?></strong>
+    <div class="block block-lookbook-category-menu" data-role="lookbook-category-menu">
+        <div class="block-title">
+            <strong role="heading"><?= __('Lookbook Categories') ?></strong>
+        </div>
+        <div class="block-content">
+            <ul class="lookbook-category-menu toggle-menu"
+                data-mage-init='<?php echo json_encode($widget) ?>'><?= $html ?></ul>
+        </div>
     </div>
-    <div class="block-content"><ul class="lookbook-category-menu toggle-menu" data-mage-init='<?php echo json_encode($widget) ?>'><?= $html ?></ul></div>
-</div>
 <?php endif ?>

@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-namespace Eloom\Lookbook\Block\Adminhtml\LookbookItem\Edit;
+namespace Eloom\Lookbookpro\Block\Adminhtml\LookbookItem\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
@@ -13,29 +13,29 @@ use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
  */
 class DeleteButton extends GenericButton implements ButtonProviderInterface {
 
-	/**
-	 * @return array
-	 */
-	public function getButtonData() {
-		$data = [];
-		if ($this->getEntityId()) {
-			$data = [
-				'label' => __('Delete Item'),
-				'class' => 'delete',
-				'on_click' => 'deleteConfirm(\'' . __(
-						'Are you sure you want to do this?'
-					) . '\', \'' . $this->getDeleteUrl() . '\')',
-				'sort_order' => 20,
-			];
-		}
-		return $data;
-	}
+  /**
+   * @return array
+   */
+  public function getButtonData() {
+    $data = [];
+    if ($this->getEntityId()) {
+      $data = [
+        'label' => __('Delete Item'),
+        'class' => 'delete',
+        'on_click' => 'deleteConfirm(\'' . __(
+            'Are you sure you want to do this?'
+          ) . '\', \'' . $this->getDeleteUrl() . '\')',
+        'sort_order' => 20,
+      ];
+    }
+    return $data;
+  }
 
-	/**
-	 * @return string
-	 */
-	public function getDeleteUrl() {
-		return $this->getUrl('*/*/delete', ['entity_id' => $this->getEntityId()]);
-	}
+  /**
+   * @return string
+   */
+  public function getDeleteUrl() {
+    return $this->getUrl('*/*/delete', ['entity_id' => $this->getEntityId()]);
+  }
 }
 

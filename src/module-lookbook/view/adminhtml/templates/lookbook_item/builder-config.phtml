@@ -1,15 +1,19 @@
 <?php
+/**
+ * Copyright © 2018 Eloom. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 ?>
 
-<script>
-var eloom = <?php echo json_encode($this->getConfig()); ?>
-</script>
+    <script>
+        var eloom = <?php echo json_encode($this->getConfig()); ?>
+    </script>
 
 <?php
 // echo $this->getLayout()->createBlock('Magento\Catalog\Block\Adminhtml\Product\Widget\Chooser')
-    // ->addData([
-        // 'button' => [
-            // 'open' => __('Select Product...')
-        // ]
-    // ])->toHtml();
+// ->addData([
+// 'button' => [
+// 'open' => __('Select Product...')
+// ]
+// ])->toHtml();
 ?>

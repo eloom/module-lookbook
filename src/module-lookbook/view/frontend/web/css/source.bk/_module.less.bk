@@ -20,7 +20,7 @@ body .loobook-container{
         }
     }
     .social-section {
-        .social-listing{
+        .eloom-social-listing{
             .item{                
                 button.share-btn{
 					background-color: @button_background;

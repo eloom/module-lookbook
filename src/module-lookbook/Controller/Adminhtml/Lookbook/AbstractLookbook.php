@@ -4,14 +4,14 @@
  * See COPYING.txt for license details.
  */
 
-namespace Eloom\Lookbook\Controller\Adminhtml\Lookbook;
+namespace Eloom\Lookbookpro\Controller\Adminhtml\Lookbook;
 
 class AbstractLookbook extends \Magento\Backend\App\Action {
-	protected $primary = 'entity_id';
-	protected $modelClass = 'Eloom\Lookbook\Model\Lookbook';
+  protected $primary = 'entity_id';
+  protected $modelClass = 'Eloom\Lookbookpro\Model\Lookbook';
 
-	public function execute() {
-		/* TO DO */
-	}
+  public function execute() {
+    /* TO DO */
+  }
 }
 

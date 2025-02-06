@@ -5,19 +5,25 @@
  * See COPYING.txt for license details.
  */
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <css src="Eloom_Lookbook::css/lookbook.css" />
+        <css src="Eloom_Lookbookpro::css/lookbook.css"/>
     </head>
     <body>
         <referenceContainer name="content">
-            <block class="Eloom\Lookbook\Block\Lookbook\View" name="lookbook" template="Eloom_Lookbook::lookbook/view.phtml">
-                <block class="Eloom\Lookbook\Block\Lookbook\View" name="lookbook.info" template="Eloom_Lookbook::lookbook/information.phtml">
-                    <block class="Eloom\Lookbook\Block\Lookbook\View" name="lookbook.social" template="Eloom_Lookbook::lookbook/social_buttons.phtml" />
+            <block class="Eloom\Lookbookpro\Block\Lookbook\View" name="lookbook"
+                   template="Eloom_Lookbookpro::lookbook/view.phtml">
+                <block class="Eloom\Lookbookpro\Block\Lookbook\View" name="lookbook.info"
+                       template="Eloom_Lookbookpro::lookbook/information.phtml">
+                    <block class="Eloom\Lookbookpro\Block\Lookbook\View" name="lookbook.social"
+                           template="Eloom_Lookbookpro::lookbook/social_buttons.phtml"/>
                 </block>
-                <block class="Eloom\Lookbook\Block\Item\ListItem" name="lookbooks.item.list" template="Eloom_Lookbook::item/list.phtml">
-                    <block class="Eloom\Lookbook\Block\Lookbook\ItemListToolbar" name="item_list_toolbar" template="Eloom_Lookbook::lookbook/item_list_toolbar.phtml">
-                        <block class="Magento\Theme\Block\Html\Pager" name="item_list_toolbar_pager" />
+                <block class="Eloom\Lookbookpro\Block\Item\ListItem" name="lookbooks.item.list"
+                       template="Eloom_Lookbookpro::item/list.phtml">
+                    <block class="Eloom\Lookbookpro\Block\Lookbook\ItemListToolbar" name="item_list_toolbar"
+                           template="Eloom_Lookbookpro::lookbook/item_list_toolbar.phtml">
+                        <block class="Magento\Theme\Block\Html\Pager" name="item_list_toolbar_pager"/>
                     </block>
                     <action method="setToolbarBlockName">
                         <argument name="name" xsi:type="string">item_list_toolbar</argument>

@@ -4,47 +4,47 @@
  * See COPYING.txt for license details.
  */
 
-namespace Eloom\Lookbook\Controller\Adminhtml\LookbookItem;
+namespace Eloom\Lookbookpro\Controller\Adminhtml\LookbookItem;
 
 use Magento\Backend\App\Action;
 use Magento\Store\Model\Store;
 
 class Delete extends AbstractLookbookItem {
-	protected $eventName = 'lookbook_lookbook_item_prepare_delete';
-	protected $_updateMsg = 'This lookbook item was deleted.';
-	protected $imageUploader = null;
-	protected $filterManager = null;
+  protected $eventName = 'lookbookpro_eloomlookbook_item_prepare_delete';
+  protected $_updateMsg = 'This lookbook item was deleted.';
+  protected $imageUploader = null;
+  protected $filterManager = null;
 
-	protected function _isAllowed() {
-		return $this->_authorization->isAllowed('Eloom_Lookbook::lookbook_item_save');
-	}
+  protected function _isAllowed() {
+    return $this->_authorization->isAllowed('Eloom_Lookbookpro::eloomlookbook_item_save');
+  }
 
-	public function execute() {
-		$request = $this->getRequest();
-		$data = $request->getParams();
-		$resultRedirect = $this->resultRedirectFactory->create();
-		if ($data) {
-			$model = $this->_objectManager->create($this->modelClass);
-			$id = $this->getRequest()->getParam($this->primary);
-			$store = (int)$request->getParam('store', Store::DEFAULT_STORE_ID);
-			$this->_eventManager->dispatch(
-				$this->eventName,
-				['model' => $model, 'request' => $this->getRequest()]
-			);
-			try {
-				$model->setStoreId($store)->load($id);
-				$result = $model->delete();
-				$this->messageManager->addSuccess($this->_updateMsg);
-				return $resultRedirect->setPath('*/*/');
-			} catch (\Magento\Framework\Exception\LocalizedException $e) {
-				$this->messageManager->addError($e->getMessage());
-			} catch (\RuntimeException $e) {
-				$this->messageManager->addError($e->getMessage());
-			} catch (\Exception $e) {
-				$this->messageManager->addException($e, $e->getMessage());
-			}
+  public function execute() {
+    $request = $this->getRequest();
+    $data = $request->getParams();
+    $resultRedirect = $this->resultRedirectFactory->create();
+    if ($data) {
+      $model = $this->_objectManager->create($this->modelClass);
+      $id = $this->getRequest()->getParam($this->primary);
+      $store = (int)$request->getParam('store', Store::DEFAULT_STORE_ID);
+      $this->_eventManager->dispatch(
+        $this->eventName,
+        ['model' => $model, 'request' => $this->getRequest()]
+      );
+      try {
+        $model->setStoreId($store)->load($id);
+        $result = $model->delete();
+        $this->messageManager->addSuccess($this->_updateMsg);
+        return $resultRedirect->setPath('*/*/');
+      } catch (\Magento\Framework\Exception\LocalizedException $e) {
+        $this->messageManager->addError($e->getMessage());
+      } catch (\RuntimeException $e) {
+        $this->messageManager->addError($e->getMessage());
+      } catch (\Exception $e) {
+        $this->messageManager->addException($e, $e->getMessage());
+      }
 
-			return $resultRedirect->setPath('*/*/edit', [$this->primary => $this->getRequest()->getParam($this->primary)]);
-		}
-	}
+      return $resultRedirect->setPath('*/*/edit', [$this->primary => $this->getRequest()->getParam($this->primary)]);
+    }
+  }
 }

@@ -1,14 +1,20 @@
 <?xml version="1.0"?>
-
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+<!--
+/**
+* Copyright © 2018 Eloom. All rights reserved.
+* See COPYING.txt for license details.
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="lookbook">
         <route id="lookbook" frontName="lookbook">
-            <module name="Eloom_Lookbook" />
+            <module name="Eloom_Lookbookpro"/>
         </route>
     </router>
     <router id="standard">
         <route id="lookbooks" frontName="lookbooks">
-            <module name="Eloom_Lookbook" />
+            <module name="Eloom_Lookbookpro"/>
         </route>
     </router>
 </config>

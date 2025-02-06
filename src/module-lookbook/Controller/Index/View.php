@@ -4,92 +4,92 @@
  * See COPYING.txt for license details.
  */
 
-namespace Eloom\Lookbook\Controller\Index;
+namespace Eloom\Lookbookpro\Controller\Index;
 
-use Eloom\Lookbook\Model\LookbookFactory;
 use Magento\Framework\View\Result\PageFactory;
+use Eloom\Lookbookpro\Model\LookbookFactory;
 
 
 class View extends \Magento\Framework\App\Action\Action {
-	protected $coreRegistry;
+  protected $coreRegistry;
 
-	protected $storeManager;
+  protected $storeManager;
 
-	protected $resultPageFactory;
+  protected $resultPageFactory;
 
-	protected $resultForwardFactory;
+  protected $resultForwardFactory;
 
-	protected $lookbookFactory;
+  protected $lookbookFactory;
 
-	protected $categoryFactory;
+  protected $categoryFactory;
 
-	protected $helper;
+  protected $helper;
 
-	protected $scopeConfig;
+  protected $scopeConfig;
 
-	protected $storeId;
+  protected $storeId;
 
-	public function __construct(
-		\Magento\Framework\App\Action\Context               $context,
-		\Magento\Store\Model\StoreManagerInterface          $storeManager,
-		\Eloom\Lookbook\Model\LookbookFactory               $lookbookFactory,
-		\Magento\Framework\Registry                         $coreRegistry,
-		\Eloom\Lookbook\Helper\Data                         $helper,
-		\Magento\Framework\Registry                         $registry,
-		\Magento\Framework\App\Config\ScopeConfigInterface  $scopeConfig,
-		PageFactory                                         $resultPageFactory,
-		\Magento\Framework\Controller\Result\ForwardFactory $resultForwardFactory
-	) {
-		parent::__construct($context);
-		$this->storeManager = $storeManager;
-		$this->coreRegistry = $coreRegistry;
-		$this->resultPageFactory = $resultPageFactory;
-		$this->resultForwardFactory = $resultForwardFactory;
-		$this->lookbookFactory = $lookbookFactory;
-		$this->helper = $helper;
-		$this->scopeConfig = $scopeConfig;
-		$this->storeId = $this->storeManager->getStore()->getId();
-	}
+  public function __construct(
+    \Magento\Framework\App\Action\Context               $context,
+    \Magento\Store\Model\StoreManagerInterface          $storeManager,
+    \Eloom\Lookbookpro\Model\LookbookFactory          $lookbookFactory,
+    \Magento\Framework\Registry                         $coreRegistry,
+    \Eloom\Lookbookpro\Helper\Data                    $helper,
+    \Magento\Framework\Registry                         $registry,
+    \Magento\Framework\App\Config\ScopeConfigInterface  $scopeConfig,
+    PageFactory                                         $resultPageFactory,
+    \Magento\Framework\Controller\Result\ForwardFactory $resultForwardFactory
+  ) {
+    parent::__construct($context);
+    $this->storeManager = $storeManager;
+    $this->coreRegistry = $coreRegistry;
+    $this->resultPageFactory = $resultPageFactory;
+    $this->resultForwardFactory = $resultForwardFactory;
+    $this->lookbookFactory = $lookbookFactory;
+    $this->helper = $helper;
+    $this->scopeConfig = $scopeConfig;
+    $this->storeId = $this->storeManager->getStore()->getId();
+  }
 
-	protected function getAllLookPageInformation() {
-		return [
-			'name' => $this->scopeConfig->getValue('lookbook/all_lookbooks_page/name', 'store'),
-			'description' => $this->scopeConfig->getValue('lookbook/all_lookbooks_page/description', 'store'),
-			'meta_title' => $this->scopeConfig->getValue('lookbook/all_lookbooks_page/meta_title', 'store'),
-			'meta_keywords' => $this->scopeConfig->getValue('lookbook/all_lookbooks_page/meta_keywords', 'store'),
-			'meta_description' => $this->scopeConfig->getValue('lookbook/all_lookbooks_page/meta_description', 'store'),
-		];
-	}
+  protected function getAllLookPageInformation() {
+    return [
+      'name' => $this->scopeConfig->getValue('eloom_lookbook/all_lookbooks_page/name', 'store'),
+      'description' => $this->scopeConfig->getValue('eloom_lookbook/all_lookbooks_page/description', 'store'),
+      'meta_title' => $this->scopeConfig->getValue('eloom_lookbook/all_lookbooks_page/meta_title', 'store'),
+      'meta_keywords' => $this->scopeConfig->getValue('eloom_lookbook/all_lookbooks_page/meta_keywords', 'store'),
+      'meta_description' => $this->scopeConfig->getValue('eloom_lookbook/all_lookbooks_page/meta_description', 'store'),
+    ];
+  }
 
-	protected function _initLookbook() {
-		$categoryId = $this->getRequest()->getParam('id', 0);
-		$category = $this->lookbookFactory->create();
-		if ($lookbook) {
-			$category->setStoreId($this->storeId);
-			if ($categoryId) {
-				$category->load($categoryId);
-			} else {
-				$category->addData($this->getAllLookPageInformation());
-			}
+  protected function _initLookbook() {
+    $categoryId = $this->getRequest()->getParam('id', 0);
+    $category = $this->lookbookFactory->create();
+    if ($lookbook) {
+      $category->setStoreId($this->storeId);
+      if ($categoryId) {
+        $category->load($categoryId);
+      } else {
+        $category->addData($this->getAllLookPageInformation());
+      }
 
-			$lookbooks = $this->helper->getLoobookByCategoryId($categoryId, $this->storeId);
-			$category->setLookbookCollection($lookbooks);
-			$this->coreRegistry->register('lookbook_category', $category);
-		}
-		return $category;
-	}
+      $lookbooks = $this->helper->getLoobookByCategoryId($categoryId, $this->storeId);
+      $category->setLookbookCollection($lookbooks);
+      $this->coreRegistry->register('lookbook_category', $category);
+    }
+    return $category;
+  }
 
-	public function execute() {
-		$category = $this->_initCategory();
-		if ($category) {
-			$page = $this->resultPageFactory->create();
-			if ($category->getUrlKey()) {
-				$urlKey = $category->getUrlKey();
-			} else {
-				$urlKey = 'root';
-			}
-			$page->getConfig()->addBodyClass('lookbook-category')->addBodyClass('lookbook-category-' . $urlKey);
-			return $page;
-		}
-	}
+  public function execute() {
+    $category = $this->_initCategory();
+    if ($category) {
+      $page = $this->resultPageFactory->create();
+      if ($category->getUrlKey()) {
+        $urlKey = $category->getUrlKey();
+      } else {
+        $urlKey = 'root';
+      }
+      $page->getConfig()->addBodyClass('lookbook-category')->addBodyClass('lookbook-category-' . $urlKey);
+      return $page;
+    }
+  }
 }

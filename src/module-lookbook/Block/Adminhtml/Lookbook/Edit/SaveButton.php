@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-namespace Eloom\Lookbook\Block\Adminhtml\Lookbook\Edit;
+namespace Eloom\Lookbookpro\Block\Adminhtml\Lookbook\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
@@ -13,19 +13,19 @@ use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
  * @package Magento\Customer\Block\Adminhtml\Edit
  */
 class SaveButton extends GenericButton implements ButtonProviderInterface {
-	/**
-	 * @return array
-	 */
-	public function getButtonData() {
-		return [
-			'label' => __('Save Lookbook'),
-			'class' => 'save primary',
-			'data_attribute' => [
-				'mage-init' => ['button' => ['event' => 'save']],
-				'form-role' => 'save',
-			],
-			'sort_order' => 90,
-		];
-	}
+  /**
+   * @return array
+   */
+  public function getButtonData() {
+    return [
+      'label' => __('Save Lookbook'),
+      'class' => 'save primary',
+      'data_attribute' => [
+        'mage-init' => ['button' => ['event' => 'save']],
+        'form-role' => 'save',
+      ],
+      'sort_order' => 90,
+    ];
+  }
 }
 

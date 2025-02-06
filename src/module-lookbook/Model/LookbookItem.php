@@ -1,16 +1,20 @@
 <?php
+/**
+ * Copyright © 2018 Eloom. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
-namespace Eloom\Lookbook\Model;
+namespace Eloom\Lookbookpro\Model;
 
-class LookbookItem extends \Eloom\Lookbook\Model\AbstractModel {
+class LookbookItem extends \Eloom\Lookbookpro\Model\AbstractModel {
 
-	const ENTITY = 'lookbook_item';
+  const ENTITY = 'eloomlookbook_item';
 
-	const CACHE_TAG = self::ENTITY;
+  const CACHE_TAG = self::ENTITY;
 
-	const CACHE_LOOKBOOK_ITEM_TAG = 'lookbook_item_group';
+  const CACHE_LOOKBOOK_ITEM_TAG = 'eloomlookbook_item_group';
 
-	protected function _construct() {
-		$this->_init('Eloom\Lookbook\Model\ResourceModel\LookbookItem');
-	}
+  protected function _construct() {
+    $this->_init('Eloom\Lookbookpro\Model\ResourceModel\LookbookItem');
+  }
 }

@@ -1,106 +1,146 @@
 <?xml version="1.0"?>
-
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<!--
+/**
+* Copyright © 2018 Eloom. All rights reserved.
+* See COPYING.txt for license details.
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <!-- Grid for Lookbook -->
-    <virtualType name="LookbookLookbookGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+    <virtualType name="LookbookproLookbookGirdFilterPool"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
         <arguments>
             <argument name="appliers" xsi:type="array">
-                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
-                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+                <item name="regular" xsi:type="object">
+                    Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter
+                </item>
+                <item name="fulltext" xsi:type="object">
+                    Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter
+                </item>
             </argument>
         </arguments>
     </virtualType>
-    <virtualType name="LookbookLookbookGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+    <virtualType name="LookbookproLookbookGridDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
         <arguments>
-            <argument name="collection" xsi:type="object" shared="false">Eloom\Lookbook\Model\ResourceModel\Lookbook\Grid\Collection</argument>
-            <argument name="filterPool" xsi:type="object" shared="false">LookbookLookbookGirdFilterPool</argument>
+            <argument name="collection" xsi:type="object" shared="false">
+                Eloom\Lookbookpro\Model\ResourceModel\Lookbook\Grid\Collection
+            </argument>
+            <argument name="filterPool" xsi:type="object" shared="false">LookbookproLookbookGirdFilterPool</argument>
         </arguments>
     </virtualType>
-    <type name="Eloom\Lookbook\Model\ResourceModel\Lookbook\Grid\Collection">
+    <type name="Eloom\Lookbookpro\Model\ResourceModel\Lookbook\Grid\Collection">
         <arguments>
-            <argument name="mainTable" xsi:type="string">lookbook_entity</argument>
-            <argument name="resourceModel" xsi:type="string">Eloom\Lookbook\Model\ResourceModel\Lookbook</argument>
+            <argument name="mainTable" xsi:type="string">eloomlookbook_entity</argument>
+            <argument name="resourceModel" xsi:type="string">Eloom\Lookbookpro\Model\ResourceModel\Lookbook</argument>
         </arguments>
     </type>
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="lookbook_lookbook_data_source" xsi:type="string">Eloom\Lookbook\Model\ResourceModel\Lookbook\Grid\Collection</item>
+                <item name="lookbookpro_eloomlookbook_data_source" xsi:type="string">
+                    Eloom\Lookbookpro\Model\ResourceModel\Lookbook\Grid\Collection
+                </item>
             </argument>
         </arguments>
     </type>
     <!-- End Grid for Lookbook -->
 
     <!-- Grid for Lookbook Category -->
-    <virtualType name="LookbookLookbookCategoryGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+    <virtualType name="LookbookproLookbookCategoryGirdFilterPool"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
         <arguments>
             <argument name="appliers" xsi:type="array">
-                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
-                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+                <item name="regular" xsi:type="object">
+                    Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter
+                </item>
+                <item name="fulltext" xsi:type="object">
+                    Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter
+                </item>
             </argument>
         </arguments>
     </virtualType>
-    <virtualType name="LookbookLookbookCategoryGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+    <virtualType name="LookbookproLookbookCategoryGridDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
         <arguments>
-            <argument name="collection" xsi:type="object" shared="false">Eloom\Lookbook\Model\ResourceModel\LookbookCategory\Grid\Collection</argument>
-            <argument name="filterPool" xsi:type="object" shared="false">LookbookLookbookCategoryGirdFilterPool</argument>
+            <argument name="collection" xsi:type="object" shared="false">
+                Eloom\Lookbookpro\Model\ResourceModel\LookbookCategory\Grid\Collection
+            </argument>
+            <argument name="filterPool" xsi:type="object" shared="false">LookbookproLookbookCategoryGirdFilterPool
+            </argument>
         </arguments>
     </virtualType>
-    <type name="Eloom\Lookbook\Model\ResourceModel\LookbookCategory\Grid\Collection">
+    <type name="Eloom\Lookbookpro\Model\ResourceModel\LookbookCategory\Grid\Collection">
         <arguments>
-            <argument name="mainTable" xsi:type="string">lookbook_category_entity</argument>
-            <argument name="resourceModel" xsi:type="string">Eloom\Lookbook\Model\ResourceModel\LookbookCategory</argument>
+            <argument name="mainTable" xsi:type="string">eloomlookbook_category_entity</argument>
+            <argument name="resourceModel" xsi:type="string">Eloom\Lookbookpro\Model\ResourceModel\LookbookCategory
+            </argument>
         </arguments>
     </type>
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="lookbook_lookbook_category_data_source" xsi:type="string">Eloom\Lookbook\Model\ResourceModel\LookbookCategory\Grid\Collection</item>
+                <item name="lookbookpro_eloomlookbook_category_data_source" xsi:type="string">
+                    Eloom\Lookbookpro\Model\ResourceModel\LookbookCategory\Grid\Collection
+                </item>
             </argument>
         </arguments>
     </type>
     <!-- End Grid for Lookbook Category -->
 
-   <!-- Grid for Lookbook Item -->
-    <virtualType name="LookbookLookbookItemGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+    <!-- Grid for Lookbook Item -->
+    <virtualType name="LookbookproLookbookItemGirdFilterPool"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
         <arguments>
             <argument name="appliers" xsi:type="array">
-                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
-                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+                <item name="regular" xsi:type="object">
+                    Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter
+                </item>
+                <item name="fulltext" xsi:type="object">
+                    Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter
+                </item>
             </argument>
         </arguments>
     </virtualType>
-    <virtualType name="LookbookLookbookItemGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+    <virtualType name="LookbookproLookbookItemGridDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
         <arguments>
-            <argument name="collection" xsi:type="object" shared="false">Eloom\Lookbook\Model\ResourceModel\LookbookItem\Grid\Collection</argument>
-            <argument name="filterPool" xsi:type="object" shared="false">LookbookLookbookItemGirdFilterPool</argument>
+            <argument name="collection" xsi:type="object" shared="false">
+                Eloom\Lookbookpro\Model\ResourceModel\LookbookItem\Grid\Collection
+            </argument>
+            <argument name="filterPool" xsi:type="object" shared="false">LookbookproLookbookItemGirdFilterPool
+            </argument>
         </arguments>
     </virtualType>
-    <type name="Eloom\Lookbook\Model\ResourceModel\LookbookItem\Grid\Collection">
+    <type name="Eloom\Lookbookpro\Model\ResourceModel\LookbookItem\Grid\Collection">
         <arguments>
-            <argument name="mainTable" xsi:type="string">lookbook_item_entity</argument>
-            <argument name="resourceModel" xsi:type="string">Eloom\Lookbook\Model\ResourceModel\LookbookItem</argument>
+            <argument name="mainTable" xsi:type="string">eloomlookbook_item_entity</argument>
+            <argument name="resourceModel" xsi:type="string">Eloom\Lookbookpro\Model\ResourceModel\LookbookItem
+            </argument>
         </arguments>
     </type>
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="lookbook_lookbook_item_data_source" xsi:type="string">Eloom\Lookbook\Model\ResourceModel\LookbookItem\Grid\Collection</item>
+                <item name="lookbookpro_eloomlookbook_item_data_source" xsi:type="string">
+                    Eloom\Lookbookpro\Model\ResourceModel\LookbookItem\Grid\Collection
+                </item>
             </argument>
         </arguments>
     </type>
     <!-- End Grid for Lookbook Item -->
-    
+
     <!-- Lookbook Image -->
-    <type name="Eloom\Lookbook\Controller\Adminhtml\Lookbook\ImageUpload">
+    <type name="Eloom\Lookbookpro\Controller\Adminhtml\Lookbook\ImageUpload">
         <arguments>
-            <argument name="imageUploader" xsi:type="object">Eloom\Lookbook\ItemImageUpload</argument>
+            <argument name="imageUploader" xsi:type="object">Eloom\Lookbookpro\ItemImageUpload</argument>
         </arguments>
     </type>
-    <virtualType name="Eloom\Lookbook\ItemImageUpload" type="Eloom\Lookbook\Model\ImageUploader">
+    <virtualType name="Eloom\Lookbookpro\ItemImageUpload" type="Eloom\Lookbookpro\Model\ImageUploader">
         <arguments>
-            <argument name="baseTmpPath" xsi:type="string">lookbook/tmp/item</argument>
-            <argument name="basePath" xsi:type="string">lookbook/item</argument>
+            <argument name="baseTmpPath" xsi:type="string">eloom/lookbook/tmp/item</argument>
+            <argument name="basePath" xsi:type="string">eloom/lookbook/item</argument>
             <argument name="allowedExtensions" xsi:type="array">
                 <item name="jpg" xsi:type="string">jpg</item>
                 <item name="jpeg" xsi:type="string">jpeg</item>
@@ -110,17 +150,17 @@
         </arguments>
     </virtualType>
     <!-- End Lookbook Image -->
-    
+
     <!-- Lookbook Category Image -->
-    <type name="Eloom\Lookbook\Controller\Adminhtml\LookbookCategory\ImageUpload">
+    <type name="Eloom\Lookbookpro\Controller\Adminhtml\LookbookCategory\ImageUpload">
         <arguments>
-            <argument name="imageUploader" xsi:type="object">Eloom\Lookbook\CategoryImageUpload</argument>
+            <argument name="imageUploader" xsi:type="object">Eloom\Lookbookpro\CategoryImageUpload</argument>
         </arguments>
     </type>
-    <virtualType name="Eloom\Lookbook\CategoryImageUpload" type="Eloom\Lookbook\Model\ImageUploader">
+    <virtualType name="Eloom\Lookbookpro\CategoryImageUpload" type="Eloom\Lookbookpro\Model\ImageUploader">
         <arguments>
-            <argument name="baseTmpPath" xsi:type="string">lookbook/tmp/category</argument>
-            <argument name="basePath" xsi:type="string">lookbook/category</argument>
+            <argument name="baseTmpPath" xsi:type="string">eloom/lookbook/tmp/category</argument>
+            <argument name="basePath" xsi:type="string">eloom/lookbook/category</argument>
             <argument name="allowedExtensions" xsi:type="array">
                 <item name="jpg" xsi:type="string">jpg</item>
                 <item name="jpeg" xsi:type="string">jpeg</item>

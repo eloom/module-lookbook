@@ -1,8 +1,14 @@
 <?xml version="1.0"?>
-
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+<!--
+/**
+ * Copyright © 2018 Eloom. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <lookbook>
+        <eloom_lookbook>
             <general>
                 <root_category>2</root_category>
             </general>
@@ -43,9 +49,9 @@
                     <items_320>2</items_320>
                     <items_0>2</items_0>
                     <margin_right_desktop>5</margin_right_desktop>
-					<margin_bottom_desktop>5</margin_bottom_desktop>
-					<margin_right_mobile>5</margin_right_mobile>
-					<margin_bottom_mobile>5</margin_bottom_mobile>
+                    <margin_bottom_desktop>5</margin_bottom_desktop>
+                    <margin_right_mobile>5</margin_right_mobile>
+                    <margin_bottom_mobile>5</margin_bottom_mobile>
                 </lookbook_list>
                 <lookbook_item_list>
                     <list_mode>grid</list_mode>
@@ -62,17 +68,19 @@
                     <items_320>2</items_320>
                     <items_0>2</items_0>
                     <margin_right_desktop>10</margin_right_desktop>
-					<margin_bottom_desktop>10</margin_bottom_desktop>
-					<margin_right_mobile>10</margin_right_mobile>
-					<margin_bottom_mobile>10</margin_bottom_mobile>
+                    <margin_bottom_desktop>10</margin_bottom_desktop>
+                    <margin_right_mobile>10</margin_right_mobile>
+                    <margin_bottom_mobile>10</margin_bottom_mobile>
                 </lookbook_item_list>
             </listing>
             <all_lookbooks_page>
                 <name>All Lookbooks</name>
-                <description><![CDATA[<p>Need some fash-spiration? Let our <a href="#">#shop</a> show you the way! Check out our campaign lookbooks and <a href="#">#shop</a> edits full of the latest trends &amp; style tips.</p>]]></description>
+                <description>
+                    <![CDATA[<p>Need some fash-spiration? Let our <a href="#">#eloom-shop</a> show you the way! Check out our campaign lookbooks and <a href="#">#eloom-shop</a> edits full of the latest trends &amp; style tips.</p>]]></description>
                 <meta_title>All Lookbooks</meta_title>
                 <meta_keywords>lookbooks,fahion,lookbook,all</meta_keywords>
-                <meta_description><![CDATA[Need some fash-spiration? Let our #shop show you the way! Check out our campaign lookbooks and #shop edits full of the latest trends & style tips.]]></meta_description>
+                <meta_description>
+                    <![CDATA[Need some fash-spiration? Let our #eloom-shop show you the way! Check out our campaign lookbooks and #eloom-shop edits full of the latest trends & style tips.]]></meta_description>
             </all_lookbooks_page>
             <lookbook_category_list>
                 <enable>1</enable>
@@ -80,6 +88,6 @@
                 <display_created_date>1</display_created_date>
                 <date_format>Y M d</date_format>
             </lookbook_category_list>
-        </lookbook>
+        </eloom_lookbook>
     </default>
 </config>

@@ -2,44 +2,20 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Eloom_Lookbook::lookbookpro"
-             parent="Eloom_Core::menu"
-             title="Lookbook"
-             translate="title"
-             module="Eloom_Lookbook"
-             sortOrder="100"
-             resource="Eloom_Lookbook::lookbookpro"/>
-        <add id="Eloom_Lookbook::lookbook_category"
-             parent="Eloom_Lookbook::lookbookpro"
-             title="Lookbook Category"
-             translate="title"
-             module="Eloom_Lookbook"
-             sortOrder="10"
-             resource="Eloom_Lookbook::lookbook_category"
-             action="lookbookpro/lookbookcategory/edit"/>
-        <add id="Eloom_Lookbook::lookbook"
-             parent="Eloom_Lookbook::lookbookpro"
-             title="Lookbook"
-             translate="title"
-             module="Eloom_Lookbook"
-             sortOrder="20"
-             resource="Eloom_Lookbook::lookbook"
+        <add id="Eloom_Lookbookpro::lookbookpro"
+             parent="Eloom_ThemesCore::core" title="Lookbook Pro" translate="title"
+             module="Eloom_Lookbookpro" sortOrder="100" resource="Eloom_Lookbookpro::lookbookpro"/>
+        <add id="Eloom_Lookbookpro::eloomlookbook_category" parent="Eloom_Lookbookpro::lookbookpro"
+             title="Lookbook Category" translate="title" module="Eloom_Lookbookpro" sortOrder="10"
+             resource="Eloom_Lookbookpro::eloomlookbook_category" action="lookbookpro/lookbookcategory/edit"/>
+        <add id="Eloom_Lookbookpro::eloomlookbook" parent="Eloom_Lookbookpro::lookbookpro" title="Lookbook"
+             translate="title" module="Eloom_Lookbookpro" sortOrder="20" resource="Eloom_Lookbookpro::eloomlookbook"
              action="lookbookpro/lookbook/index"/>
-        <add id="Eloom_Lookbook::lookbook_item"
-             parent="Eloom_Lookbook::lookbookpro"
-             title="Lookbook Item"
-             translate="title"
-             module="Eloom_Lookbook"
-             sortOrder="30"
-             resource="Eloom_Lookbook::lookbook_category"
-             action="lookbookpro/lookbookitem/index"/>
-        <add id="Eloom_Lookbook::lookbook_settings"
-             parent="Eloom_Lookbook::lookbookpro"
-             title="Settings"
-             translate="title"
-             module="Eloom_Lookbook"
-             sortOrder="30"
-             resource="Eloom_Lookbook::settings"
-             action="adminhtml/system_config/edit/section/lookbook"/>
+        <add id="Eloom_Lookbookpro::eloomlookbook_item" parent="Eloom_Lookbookpro::lookbookpro" title="Lookbook Item"
+             translate="title" module="Eloom_Lookbookpro" sortOrder="30"
+             resource="Eloom_Lookbookpro::eloomlookbook_category" action="lookbookpro/lookbookitem/index"/>
+        <add id="Eloom_Lookbookpro::eloomlookbook_settings" parent="Eloom_Lookbookpro::lookbookpro" title="Settings"
+             translate="title" module="Eloom_Lookbookpro" sortOrder="30" resource="Eloom_Lookbookpro::settings"
+             action="adminhtml/system_config/edit/section/eloom_lookbook"/>
     </menu>
 </config>

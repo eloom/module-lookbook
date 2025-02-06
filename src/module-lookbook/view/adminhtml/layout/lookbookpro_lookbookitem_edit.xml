@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-	<update handle="styles" />
+<!--
+/**
+* Copyright © 2018 Eloom. All rights reserved.
+* See COPYING.txt for license details.
+*/
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="styles"/>
     <head>
-        <css src="Eloom_Lookbook::css/lookbook-builder.css" />
+        <css src="Eloom_Lookbookpro::css/lookbook-builder.css"/>
     </head>
-	<body>
+    <body>
         <referenceBlock name="page.title">
             <action method="setTitleClass">
                 <argument name="class" xsi:type="string">complex</argument>
@@ -19,9 +25,9 @@
             </block>
         </referenceContainer>
         <referenceContainer name="content">
-            <uiComponent name="lookbook_lookbook_item_form"/>
-            <block name="lookbook_builder" class="Eloom\Lookbook\Block\Adminhtml\LookbookItem\Builder"
-                template="Eloom_Lookbook::lookbook_item/builder-config.phtml" />
+            <uiComponent name="lookbookpro_lookbook_item_form"/>
+            <block name="lookbook_builder" class="Eloom\Lookbookpro\Block\Adminhtml\LookbookItem\Builder"
+                   template="Eloom_Lookbookpro::lookbook_item/builder-config.phtml"/>
         </referenceContainer>
-	</body>
+    </body>
 </page>
