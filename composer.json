@@ -1,0 +1,42 @@
+{
+  "name": "eloom/module-lookbook",
+  "description": "Lookbook para Magento",
+  "homepage": "https://eloom.com.br/",
+  "keywords": [
+    "magento",
+    "magento 2",
+    "commerce",
+    "ecommerce",
+    "e-commerce",
+    "shop",
+    "checkout",
+    "eloom"
+  ],
+  "authors": [
+    {
+      "name": "eloom.com.br",
+      "email": "contato@eloom.com.br"
+    }
+  ],
+  "support": {
+    "email": "contato@eloom.com.br"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "~8.3",
+    "eloom/module-core": "dev-main"
+  },
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "src/module-lookbook/registration.php"
+    ],
+    "psr-4": {
+      "Eloom\\Lookbook\\": "src/module-lookbook"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<?php
+
+$blockGrid = $block->getBlockGrid();
+$gridJsObjectName = $blockGrid->getJsObjectName();
+?>
+
+<?= $block->getGridHtml() ?>
+<input type="hidden" name="lookbooks" id="in_category_products" data-form-part="lookbook_lookbook_category_form" value="" />
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Eloom_Lookbook/js/assign-lookbook-item": {
+                "selectedProducts": <?= /* @escapeNotVerified */ $block->getLookbookJson() ?>,
+                "gridJsObjectName": <?= /* @escapeNotVerified */ '"' . $gridJsObjectName . '"' ?: '{}' ?>
+            }
+        }
+    }
+</script>
+<!-- @todo remove when "UI components" will support such initialization -->
+<script>
+    require('mage/apply/main').apply();
+</script>
