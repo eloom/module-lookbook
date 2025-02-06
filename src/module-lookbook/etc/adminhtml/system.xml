@@ -1,23 +1,33 @@
 <?xml version="1.0"?>
-<!--
-/**
- * Copyright © 2018 Eloom. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <section id="eloom_lookbook" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+        <section id="eloom_lookbook"
+                 translate="label"
+                 type="text"
+                 sortOrder="40"
+                 showInDefault="1"
+                 showInWebsite="1"
                  showInStore="1">
             <class>separator-top</class>
             <label>Lookbook Pro</label>
             <tab>eloom</tab>
             <resource>Eloom_Lookbookpro::settings</resource>
-            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="general"
+                   translate="label"
+                   sortOrder="10"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
                 <label>General</label>
-                <field id="root_category" translate="label" type="select" sortOrder="10" showInDefault="1"
-                       showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="root_category"
+                       translate="label"
+                       type="select"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1"
+                       canRestore="1">
                     <label>Lookbook Root Category</label>
                     <source_model>Eloom\Lookbookpro\Model\Config\Source\CategoryRoots</source_model>
                 </field>

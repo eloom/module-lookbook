@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-/**
-* Copyright © 2018 Eloom. All rights reserved.
-* See COPYING.txt for license details.
-*/
--->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Eloom_Lookbookpro::lookbookpro" title="Eloom - Lookbook pro" sortOrder="9">
-                    <resource id="Eloom_Lookbookpro::eloomlookbook_category" title="Lookbook Category" sortOrder="10">
+                <resource id="Eloom_Lookbookpro::lookbookpro"
+                          title="Lookbook"
+                          sortOrder="9">
+                    <resource id="Eloom_Lookbookpro::eloomlookbook_category"
+                              title="Lookbook Category" sortOrder="10">
                         <resource id="Eloom_Lookbookpro::eloomlookbook_category_edit" title="Edit" sortOrder="10"/>
                         <resource id="Eloom_Lookbookpro::eloomlookbook_category_save" title="Save" sortOrder="20"/>
                     </resource>

@@ -1,13 +1,6 @@
 <?xml version="1.0"?>
-<!--
-/**
-* Copyright © 2018 Eloom. All rights reserved.
-* See COPYING.txt for license details.
-*/
--->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <!-- Grid for Lookbook -->
     <virtualType name="LookbookproLookbookGirdFilterPool"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
         <arguments>
@@ -32,7 +25,7 @@
     </virtualType>
     <type name="Eloom\Lookbookpro\Model\ResourceModel\Lookbook\Grid\Collection">
         <arguments>
-            <argument name="mainTable" xsi:type="string">eloomlookbook_entity</argument>
+            <argument name="mainTable" xsi:type="string">lookbook_entity</argument>
             <argument name="resourceModel" xsi:type="string">Eloom\Lookbookpro\Model\ResourceModel\Lookbook</argument>
         </arguments>
     </type>
@@ -73,7 +66,7 @@
     </virtualType>
     <type name="Eloom\Lookbookpro\Model\ResourceModel\LookbookCategory\Grid\Collection">
         <arguments>
-            <argument name="mainTable" xsi:type="string">eloomlookbook_category_entity</argument>
+            <argument name="mainTable" xsi:type="string">lookbook_category_entity</argument>
             <argument name="resourceModel" xsi:type="string">Eloom\Lookbookpro\Model\ResourceModel\LookbookCategory
             </argument>
         </arguments>
@@ -115,7 +108,7 @@
     </virtualType>
     <type name="Eloom\Lookbookpro\Model\ResourceModel\LookbookItem\Grid\Collection">
         <arguments>
-            <argument name="mainTable" xsi:type="string">eloomlookbook_item_entity</argument>
+            <argument name="mainTable" xsi:type="string">lookbook_item_entity</argument>
             <argument name="resourceModel" xsi:type="string">Eloom\Lookbookpro\Model\ResourceModel\LookbookItem
             </argument>
         </arguments>

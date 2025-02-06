@@ -8,7 +8,7 @@ namespace Eloom\Lookbookpro\Model\ResourceModel\LookbookItem;
 
 
 class Collection extends \Magento\Catalog\Model\ResourceModel\Collection\AbstractCollection {
-  protected function _construct() {
-    $this->_init('Eloom\Lookbookpro\Model\LookbookItem', 'Eloom\Lookbookpro\Model\ResourceModel\LookbookItem');
-  }
+	protected function _construct() {
+		$this->_init('Eloom\Lookbookpro\Model\LookbookItem', 'Eloom\Lookbookpro\Model\ResourceModel\LookbookItem');
+	}
 }

@@ -8,13 +8,13 @@ namespace Eloom\Lookbookpro\Model;
 
 class LookbookItem extends \Eloom\Lookbookpro\Model\AbstractModel {
 
-  const ENTITY = 'eloomlookbook_item';
+	const ENTITY = 'eloomlookbook_item';
 
-  const CACHE_TAG = self::ENTITY;
+	const CACHE_TAG = self::ENTITY;
 
-  const CACHE_LOOKBOOK_ITEM_TAG = 'eloomlookbook_item_group';
+	const CACHE_LOOKBOOK_ITEM_TAG = 'eloomlookbook_item_group';
 
-  protected function _construct() {
-    $this->_init('Eloom\Lookbookpro\Model\ResourceModel\LookbookItem');
-  }
+	protected function _construct() {
+		$this->_init('Eloom\Lookbookpro\Model\ResourceModel\LookbookItem');
+	}
 }
