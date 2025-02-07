@@ -17,7 +17,7 @@ class LookbookproSetup extends EavSetup {
         'entity_model' => 'Eloom\Lookbookpro\Model\ResourceModel\Lookbook',
         'attribute_model' => 'Eloom\Lookbookpro\Model\LookbookAttribute',
         'entity_attribute_collection' => 'Eloom\Lookbookpro\Model\ResourceModel\LookbookAttribute\Collection',
-        'table' => 'lookbook_entity',
+        'table' => 'eloomlookbook_entity',
         'attributes' => array(
           'name' => array(
             'type' => 'varchar',
@@ -108,7 +108,7 @@ class LookbookproSetup extends EavSetup {
         'entity_model' => 'Eloom\Lookbookpro\Model\ResourceModel\LookbookItem',
         'attribute_model' => 'Eloom\Lookbookpro\Model\LookbookItemAttribute',
         'entity_attribute_collection' => 'Eloom\Lookbookpro\Model\ResourceModel\LookbookItemAttribute\Collection',
-        'table' => 'lookbook_item_entity',
+        'table' => 'eloomlookbook_item_entity',
         'attributes' => array(
           'name' => array(
             'type' => 'varchar',
@@ -126,7 +126,7 @@ class LookbookproSetup extends EavSetup {
             'required' => true,
             'sort_order' => 6,
             'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
-            'group' => 'Lookbook Item',
+            'group' => 'Lookbook',
             'source_model' => 'Magento\Eav\Model\Entity\Attribute\Source\Boolean'
           ),
           'description' => array(
@@ -154,7 +154,7 @@ class LookbookproSetup extends EavSetup {
         'entity_model' => 'Eloom\Lookbookpro\Model\ResourceModel\LookbookCategory',
         'attribute_model' => 'Eloom\Lookbookpro\Model\LookbookCategoryAttribute',
         'entity_attribute_collection' => 'Eloom\Lookbookpro\Model\ResourceModel\LookbookCategoryAttribute\Collection',
-        'table' => 'lookbook_category_entity',
+        'table' => 'eloomlookbook_category_entity',
         'attributes' => array(
           'name' => array(
             'type' => 'varchar',
@@ -173,7 +173,7 @@ class LookbookproSetup extends EavSetup {
             'sort_order' => 6,
             'default' => 1,
             'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
-            'group' => 'Lookbook Category',
+            'group' => 'Lookbook',
             'source_model' => 'Magento\Eav\Model\Entity\Attribute\Source\Boolean'
           ),
           'description' => array(
